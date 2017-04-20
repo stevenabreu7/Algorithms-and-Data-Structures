@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{latexsym}
+\usepackage{verbatim}
+%\usepackage{code,proof,amsthm,amssymb}
+\usepackage{setspace}
+\setstretch{1.3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Algorithms and Data Strutures\\
+       Problem 5.4}
+\author{Steven Abreu}
+\date{Due: 2017/03/16}
+
+\begin{document}
+\maketitle
+
+\noindent
+\Large \textbf{Time Complexities of Sorting Algorithms.}\\
+\noindent
+Sorted by average-case time complexity.\\
+
+\begin{tabular}{l | c | c | c | c}
+	Name & Best-Case & Average-Case & Worst-Case & In-Place?\\
+	\hline
+	Counting Sort & $\Theta(n)$ & $\Theta(n)$ & $\Theta(n)$ & No\\
+%	Counting Sort & $\Theta(n+k)$ & $\Theta(n+k)$ & $\Theta(n+k)$\\
+
+	Radix Sort & $\Theta(n)$ & $\Theta(n)$ & $\Theta(n)$ & No\\
+%	Radix Sort & $\Theta(nk)$ & $\Theta(nk)$ & $\Theta(nk)$\\
+	
+	Bucket Sort & $\Theta(n)$ & $\Theta(n)$ & $\Theta(n^2)$ & No\\
+%	Bucket Sort & $\Theta(n+k)$ & $\Theta(n+k)$ & $\Theta(n+k)$\\
+
+	Cube Sort & $\Theta(n)$ & $\Theta(n \log n)$ & $\Theta(n \log n)$ & No\\
+	Timsort & $\Theta(n)$ & $\Theta(n \log n)$ & $\Theta(n \log n)$ & No (Almost)\\
+
+	Merge Sort & $\Theta(n \log n)$ & $\Theta(n \log n)$ & $\Theta(n \log n)$ & Usually not\\
+
+	Heap Sort & $\Theta(n \log n)$ & $\Theta(n \log n)$ & $\Theta(n \log n)$ & Yes\\
+
+	Quick Sort & $\Theta(n \log n)$ & $\Theta(n \log n)$ & $\Theta(n^2)$ & Can be\\
+	
+	Tree Sort & $\Theta(n \log n)$ & $\Theta(n \log n)$ & $\Theta(n^2)$ & No\\
+	
+	Shell Sort & $\Theta(n \log n)$ & $\Theta(n (\log n)^2)$ & $\Theta(n (\log n)^2)$ & Yes\\
+
+	Bubble Sort & $\Theta(n)$ & $\Theta(n^2)$ & $\Theta(n^2)$ & Yes\\
+	
+	Insertion Sort & $\Theta(n)$ & $\Theta(n^2)$ & $\Theta(n^2)$ & Yes\\
+
+	Selection Sort & $\Theta(n^2)$ & $\Theta(n^2)$ & $\Theta(n^2)$ & Yes\\
+\end{tabular}
+
+\end{document}
