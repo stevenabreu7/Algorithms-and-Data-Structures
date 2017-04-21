@@ -1,0 +1,89 @@
+Matrix m:
+1 2 
+3 4 
+Matrix n:
+10 11 12 13 
+13 14 15 16 
+16 17 18 19 
+Matrix o:
+1 2 
+3 4 
+Matrix p:
+9 8 7 
+6 5 4 
+3 2 1 
+
+Vector v:
+1 2 3 
+Vector w:
+2 3 4 
+Vector x:
+2 1 
+Vector y:
+3 9 8 
+
+Mutliplication results:
+m * v = 
+
+m * w = 
+
+m * x = 
+4 10 
+m * y = 
+
+n * v = 
+
+n * w = 
+
+n * x = 
+
+n * y = 
+
+o * v = 
+
+o * w = 
+
+o * x = 
+4 10 
+o * y = 
+
+p * v = 
+46 28 10 
+p * w = 
+70 43 16 
+p * x = 
+
+p * y = 
+155 95 35 
+v * m = 
+
+v * n = 
+84 90 96 102 
+v * o = 
+
+v * p = 
+30 24 18 
+w * m = 
+
+w * n = 
+123 132 141 150 
+w * o = 
+
+w * p = 
+48 39 30 
+x * m = 
+5 8 
+x * n = 
+
+x * o = 
+5 8 
+x * p = 
+
+y * m = 
+
+y * n = 
+275 295 315 335 
+y * o = 
+
+y * p = 
+105 85 65 
