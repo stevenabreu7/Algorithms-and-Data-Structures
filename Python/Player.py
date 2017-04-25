@@ -38,7 +38,10 @@ class SmartPlayer(Player):
         if len(board.getPossibleMoves()) == 9:
             return (1,1)
         elif len(board.getPossibleMoves()) == 8:
-            return (0,0)
+            if board.getField(1,1) == 0:
+                return (1,1)
+            else:
+                return (0,0)
         # check more complicated game situations
         for (move1, move2) in board.getPossibleMoves():
             # check winning move
@@ -110,8 +113,31 @@ class SmarterPlayer(Player):
                 return (1,1)
             else:
                 return (0,0)
-        # instead of making a random move, now we can apply the minimax algorithm
-        self.player = board.getCurrentPlayer()
-        self.opponent = 2 if self.player == 1 else 1
-        self.minimax(board, 0)
-        return self.choice
+        # check more complicated game situations
+        for (move1, move2) in board.getPossibleMoves():
+            # check winning move
+            board.simMove(move1, move2, turn)
+            if board.hasWon(turn):
+                board.simMove(move1, move2, 0)
+                return (move1, move2)
+            # check prevent loss move
+            board.simMove(move1, move2, opponent[turn])
+            if board.hasWon(opponent[turn]):
+                noLossMoves.append((move1, move2))
+            board.simMove(move1, move2, 0)
+        # return no loss move // random move
+        if len(noLossMoves) > 0:
+            return choice(noLossMoves)
+        else:
+            # fix! two opposite corners and I'm in the middle
+            plMid = board.getField(1,1) == self.player
+            opDia = (board.getField(0,0) == self.opponent and board.getField(2,2) == self.opponent)
+            opInvDia = (board.getField(0,2) == self.opponent and board.getField(2,0) == self.opponent)
+            if (opDia and plMid) or (opInvDia and plMid):
+                if len(board.getPossibleMoves()) == 6:
+                    return (0,1)
+            # instead of making a random move, now we can apply the minimax algorithm
+            self.player = board.getCurrentPlayer()
+            self.opponent = 2 if self.player == 1 else 1
+            self.minimax(board, 0)
+            return self.choice
