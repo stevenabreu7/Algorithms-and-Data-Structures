@@ -25,19 +25,3 @@ def main():
 # run the main function only if this is __main__
 if __name__ == "__main__":
     main()
-    # s = SmarterPlayer("smart")
-    # r = RandomPlayer("random")
-    # won1 = 0
-    # won2 = 0
-    # dra = 0
-    # for i in range(5):
-    #     g = Game(r,s)
-    #     res = g.run()
-    #     if res == 1:
-    #         won1 += 1
-    #     elif res == 2:
-    #         won2 += 1
-    #     else:
-    #         dra += 1
-    #     print("result",res,sep="\n")
-    # print(won1, won2, dra)

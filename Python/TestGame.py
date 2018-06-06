@@ -1,3 +1,7 @@
+from Player import *
+from Board import *
+from Game import *
+
 def main():
     """Main function in Game, starts the game in the console."""
     print("\nCommands:\n" +
@@ -28,8 +32,8 @@ def main():
                 won2 += 1
             else:
                 dra += 1
-        print(won1/times, won2/times, dra/times)
-    # Play agains the smart player
+        print("Player 1:", won1/times, "Player 2:", won2/times, "Draw:", dra/times)
+    # Play against the smart player
     elif cmd == "Play smart":
         start = input("Would you like to start? (y for yes) ")
         name = input("Enter your name: ")
@@ -53,19 +57,3 @@ def main():
 # run the main function only if this is __main__
 if __name__ == "__main__":
     main()
-    # s = SmarterPlayer("smart")
-    # r = RandomPlayer("random")
-    # won1 = 0
-    # won2 = 0
-    # dra = 0
-    # for i in range(5):
-    #     g = Game(r,s)
-    #     res = g.run()
-    #     if res == 1:
-    #         won1 += 1
-    #     elif res == 2:
-    #         won2 += 1
-    #     else:
-    #         dra += 1
-    #     print("result",res,sep="\n")
-    # print(won1, won2, dra)
